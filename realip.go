@@ -62,7 +62,7 @@ func RealIP(r *http.Request) string {
 	for _, addr := range strings.Split(hdrForwardedFor, ",") {
 		// return first non-local address
 		addr = strings.TrimSpace(addr)
-		if len(addr) > 0 && !isLocalAddress(addr) {
+		if len(addr) > 0 {
 			return addr
 		}
 	}
